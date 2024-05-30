@@ -8,6 +8,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     if (username === 'admin' && password === 'password') {
         alert('Login successful!');
         // Redirect to homepage or perform other actions
+        window.location.href = 'profile.html';
     } else {
         alert('Invalid username or password. Please try again.');
     }

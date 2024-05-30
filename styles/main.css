@@ -1,19 +1,17 @@
-/* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+    color: #333;
 }
 
 .container {
-    width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-/* Header Styles */
 header {
     background-color: #343a40;
     color: #fff;
@@ -22,92 +20,77 @@ header {
 
 header h1 {
     margin: 0;
-    text-align: center;
+    font-size: 2rem;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    margin: 10px 0 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-header nav ul li a {
+nav a {
     color: #fff;
+    margin-left: 20px;
     text-decoration: none;
-    font-weight: bold;
 }
 
-header nav ul li a:hover {
+nav a:hover {
     text-decoration: underline;
 }
 
-/* Main Styles */
 main {
-    background-color: #fff;
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
-main h2 {
+.hero {
+    background-image: url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
     text-align: center;
-    color: #007bff;
+}
+
+.hero h2 {
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
-#betting-form {
+form {
     max-width: 400px;
     margin: 0 auto;
-    background-color: #e9ecef;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-.form-group label {
+label {
     display: block;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
-.form-group select,
-.form-group input {
+input[type="number"],
+select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-button[type="submit"] {
-    width: 100%;
-    padding: 10px;
+button {
+    padding: 10px 20px;
     background-color: #007bff;
-    border: none;
     color: #fff;
-    font-size: 16px;
-    border-radius: 4px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-/* Footer Styles */
 footer {
     background-color: #343a40;
     color: #fff;
+    padding: 20px 0;
     text-align: center;
-    padding: 10px 0;
-}
-
-footer p {
-    margin: 0;
 }

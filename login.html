@@ -8,27 +8,39 @@
 </head>
 <body>
     <header>
-        <h1>Betting Website</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-        </nav>
+        <div class="container">
+            <h1>Betting Website</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
     </header>
     <main>
         <section>
-            <h2>Login</h2>
-            <form id="login-form">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
-            </form>
+            <div class="container">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Betting Website</p>
+        <div class="container">
+            <p>&copy; 2024 Betting Website</p>
+        </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
     <script src="scripts/login.js"></script>
 </body>
 </html>

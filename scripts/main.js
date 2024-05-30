@@ -1,10 +1,7 @@
-document.getElementById('betting-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+// Add any interactive JavaScript for the index.html page here.
+// This script is included at the end of the body tag in index.html.
 
-    const team = document.getElementById('team').value;
-    const amount = document.getElementById('amount').value;
-
-    alert(`Bet placed on ${team} with an amount of $${amount}`);
-
-    // Here you would handle the form submission, send data to the server, etc.
+// Redirect to the login page when the "Join Now" button is clicked
+document.getElementById('join-now').addEventListener('click', function() {
+    window.location.href = 'login.html';
 });

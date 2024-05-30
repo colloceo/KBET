@@ -2,7 +2,8 @@
 body, h1, h2, h3, p, ul, ol, li, form, input, button {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
 .container {
@@ -15,6 +16,9 @@ header {
     background-color: #1a1a1a;
     color: #fff;
     padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
@@ -65,9 +69,56 @@ main {
     background-color: #0056b3;
 }
 
+.featured-games, .live-betting, .testimonials {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.featured-games h2, .live-betting h2, .testimonials h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.game-cards, .testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 45%;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
 footer {
     background-color: #1a1a1a;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .game-cards, .testimonial-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
 }

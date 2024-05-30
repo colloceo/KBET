@@ -4,7 +4,11 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    alert(`Login attempt with username: ${username}`);
-
-    // Here you would handle the login, send data to the server, etc.
+    // Simulate login for demonstration purposes
+    if (username === 'admin' && password === 'password') {
+        alert('Login successful!');
+        // Redirect to homepage or perform other actions
+    } else {
+        alert('Invalid username or password. Please try again.');
+    }
 });

@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Betting Website</title>
+    <title>KBET - Your Ultimate Betting Destination</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Betting Website</h1>
+            <h1>KBET</h1>
             <nav>
                 <a href="index.html">Home</a>
+                <a href="games.html">Games</a>
+                <a href="casino.html">Casino</a>
+                <a href="profile.html">Profile</a>
                 <a href="login.html">Login</a>
             </nav>
         </div>
@@ -19,33 +22,35 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h2>Place Your Bets</h2>
-                <form id="betting-form">
-                    <div class="form-group">
-                        <label for="team">Choose a team:</label>
-                        <select id="team" name="team">
-                            <option value="teamA">Team A</option>
-                            <option value="teamB">Team B</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="amount">Bet Amount:</label>
-                        <input type="number" id="amount" name="amount" required>
-                    </div>
-                    <button type="submit">Place Bet</button>
-                </form>
+                <h2>Welcome to KBET</h2>
+                <p>Your Ultimate Betting Destination</p>
+                <a href="register.html" class="btn">Join Now</a>
+            </div>
+        </section>
+        <section class="featured-games">
+            <div class="container">
+                <h2>Featured Games</h2>
+                <!-- Include featured games here -->
+            </div>
+        </section>
+        <section class="live-betting">
+            <div class="container">
+                <h2>Live Betting</h2>
+                <!-- Include live betting options here -->
+            </div>
+        </section>
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Users Say</h2>
+                <!-- Include testimonials here -->
             </div>
         </section>
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2024 Betting Website</p>
+            <p>&copy; 2024 KBET - Your Ultimate Betting Destination</p>
         </div>
     </footer>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>

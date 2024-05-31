@@ -1,7 +1,8 @@
 /* Reset styles */
-body, h1, h2, h3, p, ul, li {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Global styles */
@@ -26,7 +27,6 @@ body {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    margin-right: 20px;
 }
 
 .nav ul {
@@ -43,53 +43,43 @@ body {
     text-decoration: none;
 }
 
-.main {
-    padding: 50px 0;
-}
-
-.main-heading {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
 .footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
 }
-/* Specific page styles */
 
-/* index.html styles */
-.index-banner {
-    background-image: url('index-banner.jpg');
+.section-heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Index Page Styles */
+.banner {
+    background-image: url('banner.jpg');
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 600px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     color: #fff;
+    text-align: center;
     margin-bottom: 50px;
 }
 
-.index-banner h1 {
+.banner-heading {
     font-size: 48px;
     margin-bottom: 20px;
 }
 
-.index-banner p {
+.banner-description {
     font-size: 24px;
 }
 
-/* games.html styles */
-.games-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-}
-
+/* Games Page Styles */
 .game-card {
     background-color: #fff;
     padding: 20px;
@@ -107,17 +97,7 @@ body {
     border-radius: 5px;
 }
 
-.game-card h3 {
-    margin-top: 10px;
-}
-
-/* casino.html styles */
-.casino-games {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-}
-
+/* Casino Page Styles */
 .casino-game {
     background-color: #fff;
     padding: 20px;
@@ -135,30 +115,35 @@ body {
     border-radius: 5px;
 }
 
-.casino-game h3 {
-    margin-top: 10px;
-}
-
-/* login.html styles */
+/* Login Page Styles */
 .login-form {
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
+    padding: 40px;
+    background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.login-form input[type="submit"] {
+.form-group input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #333;
@@ -168,19 +153,11 @@ body {
     cursor: pointer;
 }
 
-.login-form input[type="submit"]:hover {
+.form-group input[type="submit"]:hover {
     background-color: #555;
 }
 
-/* payment.html styles */
-.payment-methods {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
+/* Payment Page Styles */
 .payment-method {
     width: 200px;
     height: 100px;

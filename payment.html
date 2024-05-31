@@ -4,7 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KBET - Payment</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .container header,
+        .container footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Payment form styles */
+        .payment-form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .payment-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"],
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="password"]:focus {
+            border-color: #666;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                padding: 20px;
+                z-index: 1;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,28 +178,8 @@
         </nav>
     </header>
 
-    <section class="payment-methods">
-        <div class="container">
-            <h2>Payment Methods</h2>
-            <div class="payment-options">
-                <div class="payment-option">
-                    <img src="images/visa.png" alt="Visa">
-                    <p>Pay with Visa</p>
-                </div>
-                <div class="payment-option">
-                    <img src="images/mastercard.png" alt="Mastercard">
-                    <p>Pay with Mastercard</p>
-                </div>
-                <div class="payment-option">
-                    <img src="images/paypal.png" alt="PayPal">
-                    <p>Pay with PayPal</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="payment-form">
-        <div class="container">
+    <div class="container">
+        <div class="payment-form">
             <h2>Enter Payment Information</h2>
             <form>
                 <div class="form-group">
@@ -68,7 +203,7 @@
                 </div>
             </form>
         </div>
-    </section>
+    </div>
 
     <footer>
         <div class="container">
@@ -76,6 +211,12 @@
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script>
+        // JavaScript for responsiveness
+        function toggleMenu() {
+            var nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

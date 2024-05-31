@@ -4,7 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KBET - Casino</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .container header,
+        .container footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Banner styles */
+        .banner {
+            background-image: url('banner-casino.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        .banner h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        /* Popular Casino Games and Live Dealers styles */
+        .container section {
+            margin-bottom: 50px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                padding: 20px;
+                z-index: 1;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,6 +145,12 @@
             </div>
         </nav>
     </header>
+
+    <section class="banner">
+        <div class="container">
+            <h1>Welcome to KBET Casino</h1>
+        </div>
+    </section>
 
     <section class="popular-casino-games">
         <div class="container">
@@ -43,6 +172,12 @@
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script>
+        // JavaScript for responsiveness
+        function toggleMenu() {
+            var nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

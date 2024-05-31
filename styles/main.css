@@ -1,9 +1,14 @@
-/* Reset CSS */
-body, h1, h2, h3, p, ul, ol, li, form, input, button {
+/* Reset styles */
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
 }
 
 .container {
@@ -12,113 +17,182 @@ body, h1, h2, h3, p, ul, ol, li, form, input, button {
     padding: 0 20px;
 }
 
-header {
-    background-color: #1a1a1a;
+.header {
+    background-color: #333;
     color: #fff;
     padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
 }
 
-nav a {
+.nav ul {
+    list-style-type: none;
+}
+
+.nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav ul li a {
     color: #fff;
-    margin-left: 20px;
     text-decoration: none;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-main {
+.main {
     padding: 50px 0;
 }
 
-.hero {
-    background-image: url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 3rem;
+.main-heading {
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
+.footer {
+    background-color: #333;
     color: #fff;
-    text-decoration: none;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Specific page styles */
+
+/* index.html styles */
+.index-banner {
+    background-image: url('index-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.index-banner h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.index-banner p {
+    font-size: 24px;
+}
+
+/* games.html styles */
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.game-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.game-card h3 {
+    margin-top: 10px;
+}
+
+/* casino.html styles */
+.casino-games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.casino-game {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.casino-game:hover {
+    transform: translateY(-5px);
+}
+
+.casino-game img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.casino-game h3 {
+    margin-top: 10px;
+}
+
+/* login.html styles */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #0056b3;
+.login-form input[type="submit"]:hover {
+    background-color: #555;
 }
 
-.featured-games, .live-betting, .testimonials {
-    padding: 50px 0;
-    background-color: #f8f9fa;
-}
-
-.featured-games h2, .live-betting h2, .testimonials h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.game-cards, .testimonial-cards {
+/* payment.html styles */
+.payment-methods {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-.card {
+.payment-method {
+    width: 200px;
+    height: 100px;
     background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    width: 45%;
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-footer {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .game-cards, .testimonial-cards {
-        flex-direction: column;
-    }
-
-    .card {
-        width: 90%;
-        margin: 10px auto;
-    }
+.payment-method img {
+    max-width: 80%;
+    max-height: 80%;
 }

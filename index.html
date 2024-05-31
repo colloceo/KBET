@@ -7,43 +7,49 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">KBET</h1>
-            <nav class="nav">
-                <ul>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">KBET</h1>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="games.html">Games</a></li>
                     <li><a href="casino.html">Casino</a></li>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="payment.html">Payment</a></li>
                 </ul>
-            </nav>
-        </div>
+                <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+            </div>
+        </nav>
     </header>
 
-    <!-- Banner -->
     <section class="banner">
         <div class="container">
-            <h1 class="banner-heading">Welcome to KBET</h1>
-            <p class="banner-description">Place your bets and win big!</p>
+            <h1>Welcome to KBET</h1>
+            <p>Place your bets and win big!</p>
         </div>
     </section>
 
-    <!-- Featured Games -->
-    <section class="games">
+    <section class="featured-games">
         <div class="container">
-            <h2 class="section-heading">Featured Games</h2>
+            <h2>Featured Games</h2>
             <!-- Add featured games content here -->
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <section class="popular-games">
+        <div class="container">
+            <h2>Popular Games</h2>
+            <!-- Add popular games content here -->
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
             <p>&copy; 2024 KBET. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>

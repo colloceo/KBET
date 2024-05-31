@@ -7,32 +7,75 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">KBET</h1>
-            <nav class="nav">
-                <ul>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">KBET</h1>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="games.html">Games</a></li>
                     <li><a href="casino.html">Casino</a></li>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="payment.html">Payment</a></li>
                 </ul>
-            </nav>
-        </div>
+                <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+            </div>
+        </nav>
     </header>
 
     <section class="payment-methods">
         <div class="container">
-            <h2 class="section-heading">Payment Methods</h2>
-            <!-- Add payment methods content here -->
+            <h2>Payment Methods</h2>
+            <div class="payment-options">
+                <div class="payment-option">
+                    <img src="images/visa.png" alt="Visa">
+                    <p>Pay with Visa</p>
+                </div>
+                <div class="payment-option">
+                    <img src="images/mastercard.png" alt="Mastercard">
+                    <p>Pay with Mastercard</p>
+                </div>
+                <div class="payment-option">
+                    <img src="images/paypal.png" alt="PayPal">
+                    <p>Pay with PayPal</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <section class="payment-form">
+        <div class="container">
+            <h2>Enter Payment Information</h2>
+            <form>
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">Cardholder Name</label>
+                    <input type="text" id="card-name" name="card-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry">Expiry Date</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YYYY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit Payment">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
             <p>&copy; 2024 KBET. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>

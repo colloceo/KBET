@@ -7,24 +7,25 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">KBET</h1>
-            <nav class="nav">
-                <ul>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">KBET</h1>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="games.html">Games</a></li>
                     <li><a href="casino.html">Casino</a></li>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="payment.html">Payment</a></li>
                 </ul>
-            </nav>
-        </div>
+                <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+            </div>
+        </nav>
     </header>
 
     <section class="login-form">
         <div class="container">
-            <h2 class="section-heading">Login to KBET</h2>
+            <h2>Login to KBET</h2>
             <form>
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -41,10 +42,13 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p>&copy; 2024 KBET. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
+

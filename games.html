@@ -94,6 +94,75 @@
             background-color: #fff;
             border-radius: 5px;
             margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #aviator-game h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #aviator-game .game-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #aviator-game .game-controls label {
+            margin-right: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #aviator-game .game-controls input[type="text"] {
+            width: 150px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        #aviator-game .game-controls button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #aviator-game .game-controls button:hover {
+            background-color: #0056b3;
+        }
+
+        #aviator-game .game-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #aviator-game .game-info p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #aviator-game .game-info span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        #aviator-game .game-info .crash-point {
+            font-size: 32px;
+            margin-top: 20px;
+        }
+
+        #aviator-game .game-info .crash-point span {
+            color: #dc3545;
         }
 
         /* Matches section styles */
@@ -107,6 +176,8 @@
 
         .matches-section h2 {
             margin-bottom: 20px;
+            font-size: 28px;
+            text-align: center;
         }
 
         .match {
@@ -120,6 +191,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 18px;
         }
 
         .match .betting-options {
@@ -132,9 +204,14 @@
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 5px 10px;
+            padding: 8px 16px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .bet-button:hover {
+            background-color: #0056b3;
         }
 
         /* Footer styles */
@@ -162,13 +239,25 @@
                 font-size: 24px;
                 cursor: pointer;
             }
+
+            #aviator-game .game-controls {
+                flex-direction: column;
+            }
+
+            #aviator-game .game-controls input[type="text"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            #aviator-game .game-controls button {
+                width: 100%;
+            }
         }
 
         /* Accessibility */
         .nav-links li a:focus {
             outline: 2px solid #007bff; /* Example of focus style */
         }
-
     </style>
 </head>
 <body>
@@ -195,56 +284,69 @@
     </section>
 
     <main>
-        <section id="aviator-game" class="shadow p-3 mb-5 bg-body rounded">
-            <h2>AVIATOR GAME</h2>
-            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-airplane-engines" viewBox="0 0 16 16">
-                <path d="M8 0c-.787 0-1.292.592-1.572 1.151A4.347 4.347 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0ZM7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1c.213 0 .458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7V3Z"/>
-            </svg>
-            <span id="crashPoint" class="text-secondary"></span>
-            <br>
-            <div class="input-group mb-3">
-                <label for="bet">Enter your bet:</label>
-                <input type="text" id="bet" class="form-control" aria-label="Bet amount in dollars" placeholder="Enter your bet" required>
-                <div class="input-group-append">
-                    <button onclick="startGame()" id="play" class="btn btn-outline-secondary">Start Game</button>
-                    <button onclick="takeWinnings()" class="btn btn-secondary">Take Winnings</button>
+        <section id="aviator-game">
+            <div class="container">
+                <h2>Aviator Game</h2>
+                <div class="game-controls">
+                    <label for="bet">Enter your bet:</label>
+                    <input type="text" id="bet" class="form-control" aria-label="Bet amount in dollars" placeholder="Enter your bet" required>
+                    <button onclick="startGame()" id="play" class="btn btn-primary">Start Game</button>
+                    <button onclick="takeWinnings()" class="btn btn-success ml-2">Take Winnings</button>
+                </div>
+                <div class="game-info">
+                    <p>Your current balance: <span id="balance">$100.00</span></p>
+                    <p>Current multiplier: <span id="multiplier">0.00x</span></p>
+                    <p>Current profit: <span id="profit">$0.00</span></p>
+                    <p class="crash-point">Crash point: <span id="crashPoint">--</span></p>
                 </div>
             </div>
-            <br>
-            <span id="winnings" class="text-success"></span>
-                        <span id="losing" class="text-danger"></span>
         </section>
 
         <section class="matches-section">
-            <h2>Live Scores</h2>
-            <div class="match">
-                <div class="teams">
-                    <span>Team A vs Team B</span>
-                    <span>1-0</span>
+            <div class="container">
+                <h2>Live Matches</h2>
+                <div class="match">
+                    <div class="teams">
+                        <span>Team A vs Team B</span>
+                        <span>1-0</span>
+                    </div>
+                    <div class="betting-options">
+                        <button class="bet-button">Bet on Team A</button>
+                        <button class="bet-button">Bet on Team B</button>
+                                                <button class="bet-button">Bet on Draw</button>
+                    </div>
                 </div>
-                <div class="betting-options">
-                    <button class="bet-button">Bet on Team A</button>
-                    <button class="bet-button">Bet on Team B</button>
-                    <button class="bet-button">Bet on Draw</button>
+                <div class="match">
+                    <div class="teams">
+                        <span>Team C vs Team D</span>
+                        <span>2-1</span>
+                    </div>
+                    <div class="betting-options">
+                        <button class="bet-button">Bet on Team C</button>
+                        <button class="bet-button">Bet on Team D</button>
+                        <button class="bet-button">Bet on Draw</button>
+                    </div>
                 </div>
+                <!-- Add more matches similarly -->
             </div>
-            <!-- Add more matches similarly -->
         </section>
 
         <section class="matches-section">
-            <h2>Upcoming Matches</h2>
-            <div class="match">
-                <div class="teams">
-                    <span>Team C vs Team D</span>
-                    <span>Starts in 2 hours</span>
+            <div class="container">
+                <h2>Upcoming Matches</h2>
+                <div class="match">
+                    <div class="teams">
+                        <span>Team E vs Team F</span>
+                        <span>Starts in 2 hours</span>
+                    </div>
+                    <div class="betting-options">
+                        <button class="bet-button">Bet on Team E</button>
+                        <button class="bet-button">Bet on Team F</button>
+                        <button class="bet-button">Bet on Draw</button>
+                    </div>
                 </div>
-                <div class="betting-options">
-                    <button class="bet-button">Bet on Team C</button>
-                    <button class="bet-button">Bet on Team D</button>
-                    <button class="bet-button">Bet on Draw</button>
-                </div>
+                <!-- Add more matches similarly -->
             </div>
-            <!-- Add more matches similarly -->
         </section>
     </main>
 
@@ -261,52 +363,35 @@
             nav.classList.toggle('active');
         }
 
-        // Function to determine the crash point
-        function getCrashPoint() {
-            var e = 2 ** 32;
-            var h = crypto.getRandomValues(new Uint32Array(1))[0];
-            if (h % 33 === 0) return 1;
-            return Math.floor((100 * e - h) / (e - h)) / 100;
-        }
-
         // Function to start the game
         function startGame() {
             document.getElementById('play').disabled = true;
-            document.getElementById('winnings').innerHTML = "";
-            document.getElementById('losing').innerHTML = "";
             var bet = parseFloat(document.getElementById('bet').value);
 
-            var crashPoint = getCrashPoint();
-            var countdown = 1.00;
-            var interval = setInterval(function () {
-                document.getElementById('crashPoint').innerHTML = countdown.toFixed(2);
-                if (countdown.toFixed(2) == crashPoint) {
-                    clearInterval(interval);
+            // Simulating crash point calculation
+            var crashPoint = Math.random() * (2.00 - 1.01) + 1.01;
+            document.getElementById('crashPoint').textContent = crashPoint.toFixed(2);
+
+            // Simulating game crash after a delay
+            setTimeout(function() {
+                if (document.getElementById('play').disabled) {
+                    var profit = bet * crashPoint - bet;
+                    document.getElementById('profit').textContent = '$' + profit.toFixed(2);
+                    document.getElementById('multiplier').textContent = crashPoint.toFixed(2) + 'x';
                     document.getElementById('play').disabled = false;
-                    if (document.getElementById('winnings').innerHTML == "") {
-                        calculateWinnings();
-                    }
                 }
-                countdown = countdown + 0.01;
-            }, 65);
+            }, 3000);
         }
 
-        // Function to take the winnings
+        // Function to take winnings
         function takeWinnings() {
-            var bet = parseFloat(document.getElementById('bet').value);
-            var crashPoint = parseFloat(document.getElementById('crashPoint').innerHTML);
-            if (crashPoint > getCrashPoint() && document.getElementById('losing').innerHTML == "") {
-                var winnings = bet * crashPoint;
-                document.getElementById('winnings').innerHTML = "You won " + winnings.toFixed(2) + "!";
-            }
-        }
-
-        // Function to calculate the player's winnings
-        function calculateWinnings() {
-            var bet = parseFloat(document.getElementById('bet').value);
-            var crashPoint = parseFloat(document.getElementById('crashPoint').innerHTML);
-            var winnings = bet * crashPoint;
-            document.getElementById('losing').innerHTML = "The game crashed at " + crashPoint + " and you Lost.";
+            var profit = parseFloat(document.getElementById('profit').textContent.substring(1));
+            var balance = parseFloat(document.getElementById('balance').textContent.substring(1));
+            var total = balance + profit;
+            document.getElementById('balance').textContent = '$' + total.toFixed(2);
+            document.getElementById('profit').textContent = '$0.00';
+            document.getElementById('multiplier').textContent = '0.00x';
+            document.getElementById('crashPoint').textContent = '--';
         }
     </script>
 </body>

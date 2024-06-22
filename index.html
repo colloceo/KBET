@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KBET - Login</title>
+    <title>KBET - Home</title>
     <style>
         /* Reset styles */
         * {
@@ -76,55 +76,35 @@
             display: none; /* Hidden by default on larger screens */
         }
 
-        /* Login form styles */
-        .login-form {
-            margin-top: 50px;
+        /* Main section styles */
+        main {
+            padding: 20px;
             text-align: center;
         }
 
-        .login-form h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
+        .featured-games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .login-form form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="password"],
-        .form-group button[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .form-group button[type="submit"] {
+        .featured-game {
             background-color: #333;
             color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        .form-group button[type="submit"]:hover {
-            background-color: #555;
+        .featured-game h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .featured-game p {
+            font-size: 14px;
+            margin-bottom: 5px;
         }
 
         /* Footer styles */
@@ -182,24 +162,36 @@
         </nav>
     </header>
 
-    <section class="login-form">
+    <main>
         <div class="container">
-            <h2>Login to KBET</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+            <h2>Welcome to KBET</h2>
+            <p>Explore the exciting world of online gaming and casino with KBET.</p>
+
+            <h3>Featured Games</h3>
+            <div class="featured-games">
+                <div class="featured-game">
+                    <h3>Slot Machine Mania</h3>
+                    <p>Spin to win in this thrilling slot game!</p>
+                    <button>Play Now</button>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                <div class="featured-game">
+                    <h3>Blackjack Bonanza</h3>
+                    <p>Test your skills at the blackjack table.</p>
+                    <button>Play Now</button>
                 </div>
-                <div class="form-group">
-                    <button type="submit">Login</button>
+                <div class="featured-game">
+                    <h3>Roulette Royale</h3>
+                    <p>Experience the elegance of roulette.</p>
+                    <button>Play Now</button>
                 </div>
-            </form>
+                <div class="featured-game">
+                    <h3>Poker Tournament</h3>
+                    <p>Join the poker tournament and compete for big prizes.</p>
+                    <button>Play Now</button>
+                </div>
+            </div>
         </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -216,14 +208,6 @@
             navLinks.classList.toggle('active');
             const expanded = navLinks.classList.contains('active');
             menuToggle.setAttribute('aria-expanded', expanded);
-        });
-
-        // Form submission handling
-        const loginForm = document.getElementById('login-form');
-
-        loginForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent default form submission for demonstration purposes
-            alert('Form submitted!'); // Replace with actual form submission logic
         });
     </script>
 </body>

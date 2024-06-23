@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KBET - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         /* Global styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,28 +15,26 @@
             padding: 0;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
         header {
             background-color: #333;
             color: #fff;
             padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
         .logo {
             font-size: 24px;
             font-weight: bold;
-            margin-left: 20px;
         }
 
         .nav-links {
@@ -72,8 +64,30 @@
             color: #fff;
             font-size: 24px;
             cursor: pointer;
-            margin-right: 20px;
-            display: none; /* Hidden by default on larger screens */
+            display: none;
+        }
+
+        /* Banner styles */
+        .banner {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px; /* Adjust for fixed header */
+        }
+
+        .banner h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         /* Main section styles */
@@ -95,6 +109,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
 
         .featured-game h3 {
@@ -107,13 +122,28 @@
             margin-bottom: 5px;
         }
 
+        .featured-game button {
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .featured-game button:hover {
+            background-color: #e6b800;
+        }
+
         /* Footer styles */
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            margin-top: 20px;
             padding: 20px 0;
+            width: 100%;
+            margin-top: 20px;
         }
 
         /* Responsive styles */
@@ -143,31 +173,38 @@
                 margin: 10px 0;
             }
         }
+
+        /* Accessibility */
+        .nav-links li a:focus {
+            outline: 2px solid #007bff;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="container">
-                <h1 class="logo">KBET</h1>
-                <button class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="games.html">Games</a></li>
-                    <li><a href="casino.html">Casino</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                </ul>
-            </div>
+            <div class="logo">KBET</div>
+            <button class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="casino.html">Casino</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="payment.html">Payment</a></li>
+            </ul>
         </nav>
     </header>
 
+    <section class="banner">
+        <div>
+            <h1>Welcome to KBET</h1>
+            <p>Explore the exciting world of online gaming and casino with KBET.</p>
+        </div>
+    </section>
+
     <main>
         <div class="container">
-            <h2>Welcome to KBET</h2>
-            <p>Explore the exciting world of online gaming and casino with KBET.</p>
-
-            <h3>Featured Games</h3>
+            <h2>Featured Games</h2>
             <div class="featured-games">
                 <div class="featured-game">
                     <h3>Slot Machine Mania</h3>

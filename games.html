@@ -33,10 +33,14 @@
             z-index: 1000;
             top: 0;
             background-color: #333;
+            padding: 10px 0;
         }
 
         .navbar {
-            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
 
         .logo {
@@ -48,21 +52,30 @@
         .nav-links {
             list-style: none;
             display: flex;
-            justify-content: space-around;
-            width: 100%;
+            align-items: center;
         }
 
         .nav-links li {
-            display: inline-block;
             margin-right: 20px;
         }
 
         .nav-links li a {
             color: #fff;
             text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #ffcc00;
         }
 
         .menu-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
             display: none;
         }
 
@@ -169,20 +182,26 @@
             .nav-links {
                 flex-direction: column;
                 align-items: center;
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                padding: 20px;
+                z-index: 1;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .nav-links li {
-                display: block;
                 margin: 10px 0;
             }
 
             .menu-toggle {
                 display: block;
-                background: none;
-                border: none;
-                color: #fff;
-                font-size: 24px;
-                cursor: pointer;
             }
         }
 
@@ -195,17 +214,15 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="container">
-                <h1 class="logo">KBET</h1>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="games.html">Games</a></li>
-                    <li><a href="casino.html">Casino</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                </ul>
-                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">&#9776;</button>
-            </div>
+            <div class="logo">KBET</div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="casino.html">Casino</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="payment.html">Payment</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -219,50 +236,18 @@
         <section id="aviator-game" class="shadow p-3 mb-5 bg-body rounded">
             <h2>AVIATOR GAME</h2>
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-airplane-engines" viewBox="0 0 16 16">
-                <path d="M8 0c-.787 0-1.292.592-1.572 1.151A4.347 4.347 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0ZM7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1c.213 0 .458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7V3Z"/>
+                <path d="M8 0c-.787 0-1.292.592-1.572 1.151A4.347 4.347 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0ZM7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1c.213 0 .458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5        .5 0 0 0-.574-.41L1.724 11.418v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 8 7V3zm0 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Z" />
             </svg>
-            <span id="crashPoint" class="text-secondary"></span>
-            <br>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">$</span>
-                <input id="bet" type="number" class="form-control" placeholder="Enter Bet Amount" aria-label="Bet Amount" aria-describedby="basic-addon1">
-            </div>
-            <button id="play" onclick="startGame()" class="btn btn-primary">PLAY</button>
-            <button id="take" onclick="takeWinnings()" class="btn btn-success" disabled>TAKE</button>
-            <div id="game-info">
-                <p>Balance: <span id="balance">$1000.00</span></p>
-                <p>Current Multiplier: <span id="multiplier">0.00x</span></p>
-                <p>Profit: <span id="profit">$0.00</span></p>
-            </div>
-        </section>
-
-        <section class="matches-section">
-            <div class="container">
-                <h2>Live Matches</h2>
-                <div class="match">
-                    <div class="teams">
-                        <span>Team A vs Team B</span>
-                        <span>1-1</span>
-                    </div>
-                    <div class="betting-options">
-                        <button class="bet-button">Bet on Team A</button>
-                        <button class="bet-button">Bet on Team B</button>
-                        <button class="bet-button">Bet on Draw</button>
-                    </div>
+            <form id="aviator-form">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Bet:</span>
+                    <input type="number" id="bet-amount" class="form-control" placeholder="Enter your bet amount" aria-label="Enter your bet amount" aria-describedby="basic-addon2">
+                    <span class="input-group-text">$</span>
                 </div>
-                <div class="match">
-                    <div class="teams">
-                        <span>Team C vs Team D</span>
-                        <span>2-1</span>
-                    </div>
-                    <div class="betting-options">
-                        <button class="bet-button">Bet on Team C</button>
-                        <button class="bet-button">Bet on Team D</button>
-                        <button class="bet-button">Bet on Draw</button>
-                    </div>
-                </div>
-                <!-- Add more matches similarly -->
-            </div>
+                <button type="button" class="btn btn-primary bet-button" onclick="placeBet()">Place Bet</button>
+                <button type="button" class="btn btn-secondary bet-button" onclick="takeWinnings()">Take Winnings</button>
+                <p id="game-info">Balance: $1000 | Last Result: None</p>
+            </form>
         </section>
 
         <section class="matches-section">
@@ -270,16 +255,24 @@
                 <h2>Upcoming Matches</h2>
                 <div class="match">
                     <div class="teams">
-                        <span>Team E vs Team F</span>
-                        <span>Starts in 2 hours</span>
+                        <span>Team A vs Team B</span>
+                        <span>June 25, 2024</span>
                     </div>
                     <div class="betting-options">
-                        <button class="bet-button">Bet on Team E</button>
-                        <button class="bet-button">Bet on Team F</button>
-                        <button class="bet-button">Bet on Draw</button>
+                        <button class="btn btn-primary bet-button">Bet on Team A</button>
+                        <button class="btn btn-primary bet-button">Bet on Team B</button>
                     </div>
                 </div>
-                <!-- Add more matches similarly -->
+                <div class="match">
+                    <div class="teams">
+                        <span>Team C vs Team D</span>
+                        <span>June 26, 2024</span>
+                    </div>
+                    <div class="betting-options">
+                        <button class="btn btn-primary bet-button">Bet on Team C</button>
+                        <button class="btn btn-primary bet-button">Bet on Team D</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -292,58 +285,32 @@
 
     <script>
         // JavaScript for responsiveness
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const expanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', expanded);
+        });
+
         function toggleMenu() {
-            var nav = document.querySelector('.nav-links');
-            nav.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            const expanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', expanded);
         }
 
-        var crashPoint = 0;
-        var currentMultiplier = 0;
-        var interval;
-
-        // Function to start the game
-        function startGame() {
-            var bet = parseFloat(document.getElementById('bet').value);
-            if (isNaN(bet) || bet <= 0) {
-                alert("Please enter a valid bet amount.");
-                return;
-            }
-
-            document.getElementById('play').disabled = true;
-            document.getElementById('take').disabled = false;
-            document.getElementById('profit').textContent = '$0.00';
-            document.getElementById('multiplier').textContent = '1.00x';
-            crashPoint = (Math.random() * 3).toFixed(2);
-            document.getElementById('crashPoint').textContent = crashPoint;
-
-            currentMultiplier = 1.00;
-            interval = setInterval(() => {
-                currentMultiplier += 0.01;
-                document.getElementById('multiplier').textContent = currentMultiplier.toFixed(2) + 'x';
-                var profit = bet * currentMultiplier - bet;
-                document.getElementById('profit').textContent = '$' + profit.toFixed(2);
-                if (currentMultiplier >= crashPoint) {
-                    clearInterval(interval);
-                    alert("Game crashed at " + crashPoint + "x");
-                    var balance = parseFloat(document.getElementById('balance').textContent.substring(1));
-                    balance -= bet;
-                    document.getElementById('balance').textContent = '$' + balance.toFixed(2);
-                    document.getElementById('play').disabled = false;
-                    document.getElementById('take').disabled = true;
-                }
-            }, 100);
+        function placeBet() {
+            // Example function for placing a bet
+            const betAmount = document.getElementById('bet-amount').value;
+            // Process bet logic here
+            console.log(`Bet placed: $${betAmount}`);
         }
 
-        // Function to take winnings
         function takeWinnings() {
-            clearInterval(interval);
-            var profit = parseFloat(document.getElementById('profit').textContent.substring(1));
-            var balance = parseFloat(document.getElementById('balance').textContent.substring(1));
-            var total = balance + profit;
-            document.getElementById('balance').textContent = '$' + total.toFixed(2);
-            document.getElementById('play').disabled = false;
-            document.getElementById('take').disabled = true;
-            document.getElementById('crashPoint').textContent = '--';
+            // Example function for taking winnings
+            // Process winnings logic here
+            console.log('Winnings taken!');
         }
     </script>
 </body>

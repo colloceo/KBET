@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KBET - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         /* Global styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,28 +15,26 @@
             padding: 0;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
         header {
             background-color: #333;
             color: #fff;
             padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
         .logo {
             font-size: 24px;
             font-weight: bold;
-            margin-left: 20px;
         }
 
         .nav-links {
@@ -72,13 +64,12 @@
             color: #fff;
             font-size: 24px;
             cursor: pointer;
-            margin-right: 20px;
             display: none; /* Hidden by default on larger screens */
         }
 
         /* Login form styles */
         .login-form {
-            margin-top: 50px;
+            margin-top: 100px;
             text-align: center;
         }
 
@@ -94,6 +85,7 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #333;
         }
 
         .form-group {
@@ -132,25 +124,56 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            margin-top: 20px;
             padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                padding: 20px;
+                z-index: 1;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Accessibility */
+        .nav-links li a:focus {
+            outline: 2px solid #007bff;
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="container">
-                <h1 class="logo">KBET</h1>
-                <button class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="games.html">Games</a></li>
-                    <li><a href="casino.html">Casino</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                </ul>
-            </div>
+            <div class="logo">KBET</div>
+            <button class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="casino.html">Casino</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="payment.html">Payment</a></li>
+            </ul>
         </nav>
     </header>
 
